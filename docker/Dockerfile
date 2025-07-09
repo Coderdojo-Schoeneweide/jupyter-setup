@@ -9,7 +9,7 @@ RUN mkdir -p /home/cdsw/sys
 RUN python3 -m venv /home/cdsw/sys/venv
 
 # Install JupyterLab
-RUN /home/cdsw/sys/venv/bin/pip install --no-cache-dir jupyterlab jupyterlab-language-pack-de-DE
+RUN /home/cdsw/sys/venv/bin/pip install --no-cache-dir jupyterlab jupyterlab-language-pack-de-DE numpy jupyturtle
 
 # generate config and password
 RUN /home/cdsw/sys/venv/bin/python -m jupyter lab --generate-config
