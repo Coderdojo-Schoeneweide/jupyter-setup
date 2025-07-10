@@ -23,7 +23,7 @@ def to_list(i):
     return [i]
 
 
-def create_window(n_samples: int, start_duration: float = 0.01, end_duration: float = 0.01) -> np.ndarray:
+def create_window(n_samples: int, start_duration: float = 0.02, end_duration: float = 0.02) -> np.ndarray:
     start_samples = int(start_duration * SAMPLERATE)
     end_samples = int(end_duration * SAMPLERATE)
     window = np.ones(n_samples, dtype=np.float32)
