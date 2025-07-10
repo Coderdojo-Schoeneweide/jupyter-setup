@@ -1,49 +1,26 @@
-# jupyter-setup
-Anleitung und Code, um einen Jupyter Server zu starten
+# Python Notebooks
 
-## Vorbereitung
+Python Notebooks und Setup für Workshops des CoderDojo Schöneweide.
 
-* Python 3.9+ installieren
-* `pip install jupyterlab`
+## Dateien und Ordner
+Unter `docker` gibt es Dateien, um ein Docker-Image zu bauen, was verwendet werden kann, um den Workshop durchzuführen.
 
-## Konfiguration generieren
+Alternativ in den Ordner `work` wechseln und `jupyter lab` ausführen (nach [Jupyter-Installation](https://jupyter.org/install)).
 
-```bash
-jupyter lab --generate-config
-```
+Die Datei `run.sh` kann unter Linux/OSX verwendet werden, um das Docker Image mit den richtigen Port-Forwardings und Mounts auszuführen.
 
-## Passwort setzen
+Anschließend sollte sich der Link [localhost:8888](localhost:8888) erreichbar sein und eine Jupyter Notebook Oberfläche zeigen.
 
-```bash
-jupyter server password
-```
+Das Passwort ist `cdsw`.
 
-Hier wird standardmäßig `cdsw` verwendet.
-
-## `jupyter_lab_config.py` bearbeiten (normalerweise in `~/.jupyter/`)
-
-Zum Beispiel mit `vim ~/.jupyter/jupyter_lab_config.py`.
-Dort folgendes eintragen:
-
-```python
-c.ServerApp.ip = '0.0.0.0'
-c.ServerApp.port = 8888
-c.ServerApp.open_browser = False
-c.ServerApp.allow_remote_access = True
-```
-
-## Firewall Port freigeben
-
-* TCP 8888 on the host machine
-
-## Launch Jupyter Lab
-
-```bash
-jupyter lab
-```
-
-## Von anderen Computern verbinden
-
-* Im Browser `http://<host_IP>:8888` öffnen
-* Passwort `cdsw` eingeben
-
+## Notebooks
+Im Ordner `work` liegen die folgenden Notebooks:
+- `Einleitung.ipynb`:
+  - Einführung in die Umgebung und Python.
+  - Rechnen mit Zahlen.
+  - Vergleichsoperatoren
+  - Variablen
+- `Musik.ipynb`:
+  - Funktionen aufrufen
+  - Schleifen
+  - Listen
