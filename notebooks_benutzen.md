@@ -80,3 +80,5 @@ Wenn im Notebook
 Wenn jetzt plötzlich viel Text auftaucht, hat man es geschafft. Meistens öffnet sich automatisch ein neues Browser-Fenster. :white_check_mark:
 
 Wenn das nicht passiert, im Browser oben `http://localhost:8888` eingeben.
+
+Wenn du es bis hier geschafft hast, echt klasse :raised_hands:. Falls es noch Probleme gibt, schau doch mal bei einem unserer Workshops vorbei, dann können wir das bestimmt klären :wink:.
