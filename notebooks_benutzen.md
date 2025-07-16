@@ -77,3 +77,6 @@ Wenn im Notebook
 - `from musik import ton, spiele` steht, das ändern zu `from dojosw.musik import ton, spiele`.
 - `from roboter import Roboter` steht, das ändern zu `from dojosw.roboter import Roboter`.
 
+Wenn jetzt plötzlich viel Text auftaucht, hat man es geschafft. Meistens öffnet sich automatisch ein neues Browser-Fenster. :white_check_mark:
+
+Wenn das nicht passiert, im Browser oben `http://localhost:8888` eingeben.
