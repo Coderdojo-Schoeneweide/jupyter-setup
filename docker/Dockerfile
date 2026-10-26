@@ -2,14 +2,25 @@ FROM python:3.12-slim
 
 # Create a non-root user
 RUN useradd -ms /bin/bash cdsw
+
+# Install bluetooth utils
+RUN apt-get update && apt-get install -y \
+    bluetooth \
+    bluez \
+    bluez-tools \
+    rfkill \
+    libglib2.0-dev \
+    && rm -rf /var/lib/apt/lists/*
+
 USER cdsw
 
 RUN mkdir -p /home/cdsw/work
 RUN mkdir -p /home/cdsw/sys
 RUN python3 -m venv /home/cdsw/sys/venv
 
+
 # Install JupyterLab
-RUN /home/cdsw/sys/venv/bin/pip install --no-cache-dir jupyterlab jupyterlab-language-pack-de-DE numpy jupyturtle
+RUN /home/cdsw/sys/venv/bin/pip install --no-cache-dir jupyterlab jupyterlab-language-pack-de-DE numpy jupyturtle intelino-trainlib-async
 
 # generate config and password
 RUN /home/cdsw/sys/venv/bin/python -m jupyter lab --generate-config
