@@ -6,10 +6,17 @@ docker rm -f "$CONTAINER_NAME" 2>/dev/null
 # prepare permissions
 chmod -w work/{Einleitung.ipynb,Malen_mit_Robotern.ipynb,Musik.ipynb,musik.py,roboter.py,robots.png,KlugeZuege.ipynb,ZugIds.ipynb}
 
+BLUETOOTH_FLAGS=
+if [ "$1" = "-b" ]; then
+	BLUETOOTH_FLAGS="--net=host --privileged -v /var/run/dbus:/var/run/dbus"
+	echo "enabling bluetooth connections. Be careful, this could be a vulnerability"
+else
+	echo "run with -b to enable bluetooth connections"
+fi
+
 docker run -d -p 8888:8888 \
-	-u 1000:1000 \
-	--net=host --privileged \
-	-v /var/run/dbus:/var/run/dbus -v "$PWD/work":"/home/cdsw/work" \
+	-u 1000:1000 $BLUETOOTH_FLAGS \
+	-v "$PWD/work":"/home/cdsw/work" \
 	--name "$CONTAINER_NAME" bruno1996/cdsw_jupyterlab:latest
 
 stop_container() {
